@@ -1,26 +1,44 @@
 {
-  "name": "dependency-impact-explorer",
+  "name": "food-recall-traceability",
   "version": "0.1.0",
   "private": true,
+  "//type": "Declares every .ts/.js file in this project as an ES module. Without it Node has to guess a file's module system from its contents, which it does by attempting a CommonJS parse first and re-parsing on failure. Setting it once here is what lets the scripts in /scripts be plain .ts files rather than .mts.",
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:check": "node scripts/check-connection.ts",
+    "seed": "node scripts/seed.ts",
+    "cypher": "node scripts/cypher.ts",
+    "verify": "node scripts/verify-queries.ts",
+    "verify:write": "node scripts/test-create.ts",
+    "verify:schema": "node scripts/test-schema.ts"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@hookform/resolvers": "^5.9.1",
+    "@mui/icons-material": "^9.3.1",
+    "@mui/material": "^9.3.1",
+    "@mui/material-nextjs": "^9.3.0",
+    "@tanstack/react-query": "^5.101.4",
+    "axios": "^1.19.0",
+    "dotenv": "^17.4.2",
+    "neo4j-driver": "^6.2.0",
     "next": "16.3.1",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "react-hook-form": "^7.85.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.1",
-    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }

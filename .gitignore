@@ -30,8 +30,15 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files — never commit credentials...
 .env*
+# ...but do commit the placeholder template, so anyone cloning knows which
+# variables the app needs.
+!.env.example
+
+# editor directories
+.vscode/
+.idea/
 
 # vercel
 .vercel
