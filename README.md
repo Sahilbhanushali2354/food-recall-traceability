@@ -313,8 +313,26 @@ predicates in `WHERE`, `MERGE`, unique constraints, indexes, explicit transactio
 
 ### Screenshots
 
-_<add screenshots — recall dashboard, impact view with a chain, allergen checker, product
-detail with the red allergen banner>_
+**Recall dashboard** — every open recall, ordered by severity, with how far each has spread.
+
+![Recall dashboard](docs/recall-dashboard.png)
+
+**Recall impact** — the aflatoxin recall on peanut oil. Products on sale are separated from
+in-house intermediates, and each row shows the route the contamination took. The deepest
+runs `peanut oil → chocolate coating → granola bar → variety pack → family hamper`.
+
+![Recall impact](docs/recall-impact.png)
+
+**Allergen checker** — products carrying peanut traces that never appear in their own
+recipe. `chocolate digestive biscuit` is the case that matters: its recipe is "biscuit base
++ chocolate coating", and the peanut oil is inside the coating.
+
+![Allergen checker](docs/allergen-checker.png)
+
+**Product detail** — every raw ingredient at any depth with its supplier and batch, and a
+warning for the four allergens that are not in the product's own recipe.
+
+![Product detail](docs/product-detail.png)
 
 ---
 
